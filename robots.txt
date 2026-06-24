@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dmdcqbot.github.io/sitemap.xml
+Sitemap: https://dmdcqbot.ren/sitemap.xml
