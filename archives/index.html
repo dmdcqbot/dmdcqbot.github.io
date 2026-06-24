@@ -1,21 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN" data-theme="">
 <head>
   <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="telephone=no" name="format-detection"/>
-<meta name="renderer" content="webkit">
-<link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="/media/scripts/jquery.js"></script>
-<script type="text/javascript" src="/media/scripts/basic.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
 
   <meta name="generator" content="Gridea Pro 1.2.2">
-  <title>呆萌的词曲BOT</title>
+  <title>归档 · 呆萌的词曲BOT</title>
+  <meta name="description" content="早已不会写诗了QwQ">
+  <meta name="keywords" content="">
+
   
+  
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' font-family='serif'>笔</text></svg>">
+  
+
+  
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('writecho-theme');
+        var defaultMode = 'auto';
+        var mode;
+        if (stored === 'dark' || stored === 'light') { mode = stored; }
+        else if (defaultMode === 'dark') { mode = 'dark'; }
+        else if (defaultMode === 'light') { mode = 'light'; }
+        else {
+          mode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        if (mode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+
+  
+  <style id="writecho-vars">
+    :root {
+      --paper: #fcf9f3;
+      --ink: #3a2e22;
+      --accent: #a35f3a;
+      --container: 820px;
+      --font-body: &quot;LXGW WenKai&quot;, &quot;Kaiti SC&quot;, KaiTi, STKaiti, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, serif;
+    }
+  </style>
+
+  
+  
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+  
+
+  
+  <link rel="stylesheet" href="/styles/main.css">
+
+  
+  <link rel="canonical" href="https://dmdcqbot.github.io/">
+  <meta property="og:site_name" content="呆萌的词曲BOT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="归档 · 呆萌的词曲BOT">
+  <meta property="og:description" content="早已不会写诗了QwQ">
+  
+
+  
+  <link rel="alternate" type="application/atom+xml" title="呆萌的词曲BOT Atom" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="呆萌的词曲BOT RSS" href="/feed.xml">
+
+  
+  
+  
+
+  
+  <script type="application/json" id="writecho-config">{
+    "themeMode": "auto",
+    "showReadingProgress": true,
+    "showBackToTop": true,
+    "showCodeCopy": true,
+    "showToc": true,
+    "showSearch": true,
+    "memosShowHeatmap": true
+  }</script>
 <meta name="description" content="早已不会写诗了QwQ">
 <link rel="canonical" href="https://dmdcqbot.github.io/archives/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"呆萌的词曲BOT","url":"https://dmdcqbot.github.io","description":"早已不会写诗了QwQ","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://dmdcqbot.github.io/search?q={search_term_string}"}}</script>
@@ -32,167 +95,125 @@
 <meta name="twitter:image" content="/images/avatar.png">
 </head>
 <body>
-  <div class="header">
-  <div class="logo_title">
-    <div class="title animated fadeInDown"><img src="/images/avatar.png"/>
-      <h1 title="呆萌的词曲BOT" class="weaklink"><a href="/">呆萌的词曲BOT</a></h1>
-      <div class="navbar weaklink">
-        <div class="normal_nav">
-          <div class="bitcron_nav_container">
-            <div class="bitcron_nav">
-              <div class="mixed_site_nav_wrap site_nav_wrap">
-                <ul class="mixed_site_nav site_nav sm sm-base">
-                  
-                  <li><a href="/" class="selected active current nav__item">首页</a></li>
-                  
-                  <li><a href="/post" class="selected active current nav__item">博客</a></li>
-                  
-                  <li><a href="/memos" class="selected active current nav__item">闪念</a></li>
-                  
-                  <li><a href="/archives" class="selected active current nav__item">归档</a></li>
-                  
-                  <li><a href="/tags" class="selected active current nav__item">标签</a></li>
-                  
-                  <li><a href="/links" class="selected active current nav__item">友链</a></li>
-                  
-                  <li><a href="/post/about" class="selected active current nav__item">关于</a></li>
-                  
-                </ul>
-                <div class="clear clear_nav_inline_end"></div>
-              </div>
-            </div>
-            <div class="clear clear_nav_end"></div>
-          </div>
-        </div>
-        <div class="hamberger"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
-      </div>
-    </div>
-  </div>
-  <div class="hidden_nav animated fadeInDown">
-    <div class="bitcron_nav_container">
-      <div class="bitcron_nav">
-        <div class="mixed_site_nav_wrap site_nav_wrap">
-          <ul class="mixed_site_nav site_nav sm sm-base">
-            
-            <li><a href="/" class="selected active current nav__item">首页</a></li>
-            
-            <li><a href="/post" class="selected active current nav__item">博客</a></li>
-            
-            <li><a href="/memos" class="selected active current nav__item">闪念</a></li>
-            
-            <li><a href="/archives" class="selected active current nav__item">归档</a></li>
-            
-            <li><a href="/tags" class="selected active current nav__item">标签</a></li>
-            
-            <li><a href="/links" class="selected active current nav__item">友链</a></li>
-            
-            <li><a href="/post/about" class="selected active current nav__item">关于</a></li>
-            
-          </ul>
-          <div class="clear clear_nav_inline_end"></div>
-        </div>
-      </div>
-      <div class="clear clear_nav_end"></div>
-    </div>
-  </div>
-</div>
 
-  <div class="main">
-    <div class="main-inner">
-      <div class="content">
+  
+  <div class="reading-progress" id="reading-progress" style="display:none"></div>
+
+  
+  <header class="site-header">
+  <div class="container site-header-inner">
+    <a class="site-brand" href="/" rel="home">
+      
+        <h1 class="site-brand-text">呆萌的词曲BOT</h1>
+      
+    </a>
+    
+      <p class="site-subtitle">听见笔尖回声</p>
+    
+
+    
+      <nav class="site-nav" aria-label="主导航">
         
-<div class="list_with_title">
-  <div class="listing_title">归档</div>
-  <div class="listing">
-    <div class="listing-item">
-      
-      <div class="listing_post"><a href="/post/about/" title="关于">关于</a>
-        <div class="post_date"><span class="date">2026-06-24</span></div>
-      </div>
-      
-    </div>
+          <a href="/">首页</a>
+        
+          <a href="/post">博客</a>
+        
+          <a href="/memos">闪念</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/links">友链</a>
+        
+          <a href="/post/about">关于</a>
+        
+      </nav>
+    
+  </div>
+
+  <div class="site-controls">
+    
+      <button class="ctrl" type="button" data-action="open-search" aria-label="搜索">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    
+    
+      <button class="ctrl" type="button" data-action="toggle-theme" aria-label="切换深浅模式">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    
+  </div>
+</header>
+
+
+  
+  <main class="container" role="main">
+    
+  <header class="page-header">
+    <h1>归档</h1>
+    <p>按年份串成时间轴，从最近到从前</p>
+    <span class="deco"></span>
+  </header>
+
+  
+    <div class="empty-state"><p>纸面还很白净——尚无归档。</p></div>
+  
+
+  </main>
+
+  
+  <footer class="site-footer">
+  <div class="container">
+    
+
+    
+      <p class="footer-slogan">笔尖之下，皆是回声</p>
+    
+
+    <p>
+      © 2026 <a href="/">呆萌的词曲BOT</a>
+       · Powered by <a href="https://github.com/Gridea-Pro/gridea-pro" target="_blank" rel="noopener">Gridea Pro</a> · Theme <a href="https://github.com/Gridea-Pro/gridea-pro-themes/tree/main/themes/writecho" target="_blank" rel="noopener">Writecho</a>
+    </p>
+
+    
+
+    
+  </div>
+</footer>
+
+
+  
+  
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  
+
+  
+  
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-input-label">
+  <div class="search-modal-panel" role="document">
+    <label for="search-modal-input" id="search-input-label" class="visually-hidden" style="position:absolute;left:-9999px">搜索</label>
+    <input class="search-modal-input" id="search-modal-input" type="search" placeholder="搜索文章 / 标签 / 内容…" autocomplete="off">
+    <p class="search-modal-tip">↑ ↓ 选择 · Enter 进入 · Esc 关闭 · / 唤起 · Cmd+K / Ctrl+K 唤起</p>
+    <div class="search-modal-results" id="search-modal-results"></div>
+    <div class="search-modal-empty" style="display:none"></div>
   </div>
 </div>
 
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-<link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-<div class="site_footer_wrap"><div class="site_footer">
-  <div class="mysocials"><div class="my_socials">
-    
-    
-    
-    
-    <a href="https://github.com/shinonome-shizuka" title="github"><i class="fa fa-github"></i></a>
-    
-  </div>
-  <link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-  </div>
-  <div class="copyright">Powered by Gridea Pro</div>
-</div></div>
-</div>
 
-<style type="text/css">a.back_to_top {
-    text-decoration: none;
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    background: #f0f0f0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    transition-duration: .5s;
-    transition-propety: background-color;
-    display: none;
-}
-a.back_to_top span {
-    color: #888;
-}
-a.back_to_top:hover {
-    cursor: pointer;
-    background: #dfdfdf;
-}
-a.back_to_top:hover span {
-    color: #555;
-}
-@media print, screen and (max-width: 580px) {
-    .back_to_top {
-        display: none !important;
-    }
-}
-</style>
-<a id="back_to_top" href="#" class="back_to_top"><span>&#9651;</span></a>
-<script type="text/javascript" src="/media/scripts/jquery.js"></script>
-<script>$(document).ready((function(_this) {
-  return function() {
-    var bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function() {
-        var st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function() {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
-</script>
+  
+  
 
-<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: bitcron-pro v1.1.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+  
+  <script src="/scripts/main.js" defer></script>
+
+  
+  
+  
+
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: writecho v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
 </body>
 </html>
