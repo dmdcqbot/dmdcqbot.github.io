@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <meta name="generator" content="Gridea Pro 1.2.2">
+  <title>在NAS上搭建生存戰爭 - Linux端服務器保姆級教程 · 呆萌の詞曲波特</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="服務器,生存戰爭,聯機,SC,Linux,NAS">
+
+  
+  
+    <link rel="icon" href="https://i.im.ge/QMtuDRf/logo2.png">
+  
+
+  
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('writecho-theme');
+        var defaultMode = 'user';
+        var mode;
+        if (stored === 'dark' || stored === 'light') { mode = stored; }
+        else if (defaultMode === 'dark') { mode = 'dark'; }
+        else if (defaultMode === 'light') { mode = 'light'; }
+        else {
+          mode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        if (mode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+
+  
+  <style id="writecho-vars">
+    :root {
+      --paper: #fcf9f3;
+      --ink: #3a2e22;
+      --accent: #a35f3a;
+      --container: 820px;
+      --font-body: &quot;LXGW WenKai&quot;, &quot;Kaiti SC&quot;, KaiTi, STKaiti, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, serif;
+    }
+  </style>
+
+  
+  
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+  
+
+  
+  <link rel="stylesheet" href="/styles/main.css">
+
+  
+  <link rel="canonical" href="https://dmdcqbot.ren/post/sc-server/">
+  <meta property="og:site_name" content="呆萌の詞曲波特">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="在NAS上搭建生存戰爭 - Linux端服務器保姆級教程">
+  <meta property="og:description" content="">
+  
+
+  
+  <link rel="alternate" type="application/atom+xml" title="呆萌の詞曲波特 Atom" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="呆萌の詞曲波特 RSS" href="/feed.xml">
+
+  
+  
+  
+
+  
+  <script type="application/json" id="writecho-config">{
+    "themeMode": "user",
+    "showReadingProgress": true,
+    "showBackToTop": true,
+    "showCodeCopy": true,
+    "showToc": true,
+    "showSearch": true,
+    "memosShowHeatmap": true
+  }</script>
+<meta name="description" content="最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。 本文主要分兩個部分： 壹部分 - 本地NAS 貳部分 - 内網穿透 執行的主要條件: 刷好NAS或者任何Linux的設備（本文是Debian12） 内網穿透的賬戶 &amp;hellip;">
+<meta name="keywords" content="呆萌的癡情Bot,呆萌的詞曲Bot,對面的持槍Bot">
+<link rel="canonical" href="https://dmdcqbot.ren/post/sc-server/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","url":"https://dmdcqbot.ren/post/sc-server/","description":"最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。 本文主要分兩個部分： 壹部分 - 本地NAS 貳部分 - 内網穿透 執行的主要條件: 刷好NAS或者任何Linux的設備（本文是Debian12） 内網穿透的賬戶 \u0026hellip;","datePublished":"2026-06-24T18:29:58Z","dateModified":"2026-06-24T18:29:58Z","author":{"@type":"Person","name":"呆萌の詞曲波特"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"呆萌の詞曲波特"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dmdcqbot.ren","name":"呆萌の詞曲波特","position":1},{"@type":"ListItem","item":"https://dmdcqbot.ren/post/sc-server/","name":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","position":2}]}</script>
+</head>
+<body>
+
+  
+  <div class="reading-progress" id="reading-progress" style="display:none"></div>
+
+  
+  <header class="site-header">
+  <div class="container site-header-inner">
+    <a class="site-brand" href="/" rel="home">
+      
+        <h1 class="site-brand-text">呆萌の詞曲波特</h1>
+      
+    </a>
+    
+      <p class="site-subtitle">早已不寫詩了</p>
+    
+
+    
+      <nav class="site-nav" aria-label="主导航">
+        
+          <a href="/">首頁</a>
+        
+          <a href="/post">博客</a>
+        
+          <a href="/memos">閃念</a>
+        
+          <a href="/archives">歸檔</a>
+        
+          <a href="/tags">標簽</a>
+        
+          <a href="/links">友鏈</a>
+        
+          <a href="/post/about">關於</a>
+        
+      </nav>
+    
+  </div>
+
+  <div class="site-controls">
+    
+      <button class="ctrl" type="button" data-action="open-search" aria-label="搜索">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    
+    
+      <button class="ctrl" type="button" data-action="toggle-theme" aria-label="切换深浅模式">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    
+  </div>
+</header>
+
+
+  
+  <main class="container" role="main">
+    
+  <article class="post-detail">
+    <header class="post-header">
+      <h1 class="post-title">在NAS上搭建生存戰爭 - Linux端服務器保姆級教程</h1>
+      <div class="post-meta">
+        <span class="meta-item"><time datetime="2026-06-24">2026-06-24</time></span>
+        
+          <span class="meta-item">
+            
+              <a href="/category/default/">默认分类</a>
+            
+          </span>
+        
+        <span class="meta-item">2330 字</span>
+        <span class="meta-item">3 分钟阅读</span>
+        
+      </div>
+    </header>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。</p>
+<p>本文主要分兩個部分：</p>
+<ul>
+<li>壹部分 - 本地NAS</li>
+<li>貳部分 - 内網穿透</li>
+</ul>
+<p>執行的主要條件:</p>
+<ul>
+<li>刷好NAS或者任何Linux的設備（本文是Debian12）</li>
+<li>内網穿透的賬戶</li>
+</ul>
+<h2 id="naslinux">本地NAS（Linux）搭建</h2>
+<p>首先我們得要明確，這個文件得下哪個？官網給了我們一個地址：<a href="https://gitee.com/SC-SPM/SurvivalcraftNet/releases">SurvivalcraftNet</a>。</p>
+<p>下載選項如圖：<br />
+<img src="/post-images/1782297848561795500_0.png" alt="" /></p>
+<p>接下來這個文件要保存好，以後用得上。</p>
+<p>然後正常找個你喜歡的地址解壓放好，像我這樣就行。<br />
+<img src="/post-images/1782298015871435600_0.png" alt="" /></p>
+<p>發現裏面長這樣：<br />
+<img src="/post-images/1782298123236692100_0.png" alt="" /></p>
+<p>然後就能很簡單發現有個執行文件文件，進入目錄是不是直接執行./Survivalcraft就行了呢？</p>
+<p>如果執行就會彈出:</p>
+<pre><code>$ ./Survivalcraft
+You must install .NET to run this application.
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+Download the .NET runtime:
+https://aka.ms/dotnet-core-applaunch?missing_runtime=true&amp;arch=x64&amp;rid=linux-x64&amp;os=debian.12&amp;apphost_version=10.0.9
+</code></pre>
+<p>好，既然缺什麽就補什麽：</p>
+<pre><code># 添加 Microsoft 包仓库
+wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+# 更新并安装 .NET 运行时
+sudo apt-get update
+sudo apt-get install -y dotnet-runtime-10.0
+</code></pre>
+<p><strong>注意：但是有的老版本Linux可能包还不可用（.NET 10 在 2025 年 11 月正式发布，可能 Debian 仓库尚未同步），使用手动安装：</strong></p>
+<pre><code># 使用微软官方安装脚本
+wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+chmod +x dotnet-install.sh
+./dotnet-install.sh --channel 10.0 --runtime dotnet --install-dir /usr/share/dotnet
+</code></pre>
+<p>或者下载二进制包：</p>
+<pre><code># 下载 .NET 10 运行时（x64 Linux）
+wget https://download.visualstudio.microsoft.com/download/pr/dotnet-runtime-10.0.0-preview.x-linux-x64.tar.gz
+
+sudo tar -zxf dotnet-runtime-10.0.*-linux-x64.tar.gz -C /usr/share/dotnet --overwrite
+</code></pre>
+<p><strong>验证安装:</strong></p>
+<p><code>dotnet --list-runtimes</code></p>
+<p><strong>然後出現這個就OK了：</strong></p>
+<p><code>Microsoft.NETCore.App 10.0.0 [/usr/share/dotnet/shared/Microsoft.NETCore.App]</code></p>
+<p>再次運行游戲即可：</p>
+<p><code>./Survivalcraft</code></p>
+<p>其中的東西我不説你應該都知道怎麽弄，就按數字后最後一步就啓動完事。服務器可以運行了，但是注意你退出SSH的話就會直接挂掉。</p>
+<p>所以我們需要將用Screen來完成自動化操作：</p>
+<pre><code># 1. 创建一个新的 screen 会话（命名为 sc）
+screen -S sc
+
+# 2. 在 screen 会话内运行游戏
+cd 你的執行文件所在文件夾
+./Survivalcraft
+
+# 3. 最後注意要按 Ctrl+A，然后按 D 键，分离会话，回到原终端
+# 游戏会在后台继续运行
+</code></pre>
+<p><strong>服務器部署完結</strong></p>
+<h2 id="heading">内網穿透部分説明</h2>
+<p>其實你使用什麽内網穿透都行，最適合你的就行。或者家裏有公網IP也可以直接綁定域名用。</p>
+<p>端口默認28887，其實也不用改。自己弄個防火墻就可以了。</p>
+<p><img src="/post-images/1782299780847366500_0.png" alt="" /></p>
+
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-footer-tags">
+          <span class="post-footer-tags-label">标签</span>
+          
+            <a href="/tag/fu-wu-qi/">服務器</a>
+          
+            <a href="/tag/sheng-cun-zhan-zheng/">生存戰爭</a>
+          
+            <a href="/tag/lian-ji/">聯機</a>
+          
+            <a href="/tag/sc/">SC</a>
+          
+            <a href="/tag/linux/">Linux</a>
+          
+            <a href="/tag/nas/">NAS</a>
+          
+        </div>
+      
+
+      
+
+
+      
+<section class="post-comments">
+  <h3 class="post-comments-title">留下回声</h3>
+  <div id="gridea-comments" data-post-id="qjruO5" data-post-title="在NAS上搭建生存戰爭 - Linux端服務器保姆級教程" data-post-link="/post/sc-server/">
+    
+      
+    
+  </div>
+</section>
+
+    </footer>
+  </article>
+
+  </main>
+
+  
+  <footer class="site-footer">
+  <div class="container">
+    
+
+    
+      <p class="footer-slogan">相遇和離散總有保質期</p>
+    
+
+    <p>
+      © 2026 <a href="/">呆萌の詞曲波特</a>
+       · Powered by <a href="https://github.com/Gridea-Pro/gridea-pro" target="_blank" rel="noopener">Gridea Pro</a> · Theme <a href="https://github.com/Gridea-Pro/gridea-pro-themes/tree/main/themes/writecho" target="_blank" rel="noopener">Writecho</a>
+    </p>
+
+    
+
+    
+  </div>
+</footer>
+
+
+  
+  
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  
+
+  
+  
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-input-label">
+  <div class="search-modal-panel" role="document">
+    <label for="search-modal-input" id="search-input-label" class="visually-hidden" style="position:absolute;left:-9999px">搜索</label>
+    <input class="search-modal-input" id="search-modal-input" type="search" placeholder="搜索文章 / 标签 / 内容…" autocomplete="off">
+    <p class="search-modal-tip">↑ ↓ 选择 · Enter 进入 · Esc 关闭 · / 唤起 · Cmd+K / Ctrl+K 唤起</p>
+    <div class="search-modal-results" id="search-modal-results"></div>
+    <div class="search-modal-empty" style="display:none"></div>
+  </div>
+</div>
+
+
+  
+  
+
+  
+  <script src="/scripts/main.js" defer></script>
+
+  
+  
+  
+
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: writecho v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
+</html>
