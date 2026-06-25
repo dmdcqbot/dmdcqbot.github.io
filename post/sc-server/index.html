@@ -6,13 +6,13 @@
   <meta name="referrer" content="no-referrer-when-downgrade">
 
   <meta name="generator" content="Gridea Pro 1.2.2">
-  <title>在NAS上搭建生存戰爭 - Linux端服務器保姆級教程 · 大碼的長裙</title>
+  <title>在NAS上搭建生存戰爭 - Linux端服務器保姆級教程 · 呆萌の柴犬</title>
   <meta name="description" content="">
   <meta name="keywords" content="服務器,生存戰爭,聯機,SC,Linux,NAS">
 
   
   
-    <link rel="icon" href="https://i.im.ge/QMtsj9F/logo4.png">
+    <link rel="icon" href="https://i.im.ge/QMtuDRf/logo2.png">
   
 
   
@@ -54,16 +54,16 @@
   <link rel="stylesheet" href="/styles/main.css">
 
   
-  <link rel="canonical" href="https://zionyuan-start-blog.vercel.app/post/sc-server/">
-  <meta property="og:site_name" content="大碼的長裙">
+  <link rel="canonical" href="https://dmdcqbot.ren/post/sc-server/">
+  <meta property="og:site_name" content="呆萌の柴犬">
   <meta property="og:type" content="article">
   <meta property="og:title" content="在NAS上搭建生存戰爭 - Linux端服務器保姆級教程">
   <meta property="og:description" content="">
   
 
   
-  <link rel="alternate" type="application/atom+xml" title="大碼的長裙 Atom" href="/atom.xml">
-  <link rel="alternate" type="application/rss+xml" title="大碼的長裙 RSS" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="呆萌の柴犬 Atom" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="呆萌の柴犬 RSS" href="/feed.xml">
 
   
   
@@ -81,9 +81,9 @@
   }</script>
 <meta name="description" content="最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。 本文主要分兩個部分： 壹部分 - 本地NAS 貳部分 - 内網穿透 執行的主要條件: 刷好NAS或者任何Linux的設備（本文是Debian12） 内網穿透的賬戶 &amp;hellip;">
 <meta name="keywords" content="呆萌的癡情Bot,呆萌的詞曲Bot,對面的持槍Bot">
-<link rel="canonical" href="https://zionyuan-start-blog.vercel.app/post/sc-server/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","url":"https://zionyuan-start-blog.vercel.app/post/sc-server/","description":"最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。 本文主要分兩個部分： 壹部分 - 本地NAS 貳部分 - 内網穿透 執行的主要條件: 刷好NAS或者任何Linux的設備（本文是Debian12） 内網穿透的賬戶 \u0026hellip;","datePublished":"2026-06-24T18:29:58+08:00","dateModified":"2026-06-24T18:29:58+08:00","author":{"@type":"Person","name":"大碼的長裙"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"大碼的長裙"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://zionyuan-start-blog.vercel.app","name":"大碼的長裙","position":1},{"@type":"ListItem","item":"https://zionyuan-start-blog.vercel.app/post/sc-server/","name":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","position":2}]}</script>
+<link rel="canonical" href="https://dmdcqbot.ren/post/sc-server/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","url":"https://dmdcqbot.ren/post/sc-server/","description":"最近突然死亡的記憶在攻擊我肚臍左邊網上數第五根肋骨，差點死在過去的回憶裏。這麽老的游戲居然還以模組的模式更新了。然後我想著能不能直接運行試試呢，結果服務端貼心地發出來了。那麽搭建試試吧。 本文主要分兩個部分： 壹部分 - 本地NAS 貳部分 - 内網穿透 執行的主要條件: 刷好NAS或者任何Linux的設備（本文是Debian12） 内網穿透的賬戶 \u0026hellip;","datePublished":"2026-06-24T18:29:58+08:00","dateModified":"2026-06-24T18:29:58+08:00","author":{"@type":"Person","name":"呆萌の柴犬"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"呆萌の柴犬"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dmdcqbot.ren","name":"呆萌の柴犬","position":1},{"@type":"ListItem","item":"https://dmdcqbot.ren/post/sc-server/","name":"在NAS上搭建生存戰爭 - Linux端服務器保姆級教程","position":2}]}</script>
 </head>
 <body>
 
@@ -95,11 +95,11 @@
   <div class="container site-header-inner">
     <a class="site-brand" href="/" rel="home">
       
-        <h1 class="site-brand-text">大碼的長裙</h1>
+        <h1 class="site-brand-text">呆萌の柴犬</h1>
       
     </a>
     
-      <p class="site-subtitle">早已不寫詩了</p>
+      <p class="site-subtitle">已經標記你了</p>
     
 
     
@@ -286,7 +286,7 @@ cd 你的執行文件所在文件夾
     
 
     <p>
-      © 2026 <a href="/">大碼的長裙</a>
+      © 2026 <a href="/">呆萌の柴犬</a>
        · Powered by <a href="https://github.com/Gridea-Pro/gridea-pro" target="_blank" rel="noopener">Gridea Pro</a> · Theme <a href="https://github.com/Gridea-Pro/gridea-pro-themes/tree/main/themes/writecho" target="_blank" rel="noopener">Writecho</a>
     </p>
 

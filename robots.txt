@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zionyuan-start-blog.vercel.app/sitemap.xml
+Sitemap: https://dmdcqbot.ren/sitemap.xml
