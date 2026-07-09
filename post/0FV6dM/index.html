@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <meta name="generator" content="Gridea Pro 1.2.2">
+  <title>批量刪除B站關注，精簡急速版 · 蝶夢渡川秋</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="B站">
+
+  
+  
+    <link rel="icon" href="https://i.im.ge/QMthOYC/logo5.png">
+  
+
+  
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('writecho-theme');
+        var defaultMode = 'user';
+        var mode;
+        if (stored === 'dark' || stored === 'light') { mode = stored; }
+        else if (defaultMode === 'dark') { mode = 'dark'; }
+        else if (defaultMode === 'light') { mode = 'light'; }
+        else {
+          mode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        if (mode === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+
+  
+  <style id="writecho-vars">
+    :root {
+      --paper: #fcf9f3;
+      --ink: #3a2e22;
+      --accent: #a35f3a;
+      --container: 820px;
+      --font-body: &quot;LXGW WenKai&quot;, &quot;Kaiti SC&quot;, KaiTi, STKaiti, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, serif;
+    }
+  </style>
+
+  
+  
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+  
+
+  
+  <link rel="stylesheet" href="/styles/main.css">
+
+  
+  <link rel="canonical" href="https://dmdcq.cn/post/0FV6dM/">
+  <meta property="og:site_name" content="蝶夢渡川秋">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="批量刪除B站關注，精簡急速版">
+  <meta property="og:description" content="">
+  
+
+  
+  <link rel="alternate" type="application/atom+xml" title="蝶夢渡川秋 Atom" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="蝶夢渡川秋 RSS" href="/feed.xml">
+
+  
+  
+  
+
+  
+  <script type="application/json" id="writecho-config">{
+    "themeMode": "user",
+    "showReadingProgress": true,
+    "showBackToTop": true,
+    "showCodeCopy": true,
+    "showToc": true,
+    "showSearch": true,
+    "memosShowHeatmap": false
+  }</script>
+<meta name="description" content="在知乎上看到一個困擾我許久的問題，我認爲學習視頻多的地方應該關注知識區UP主之類的，然而關注了1000個不關聯的人。這難免和我内心相悖，於是就找找有什麽地方可以教我一邊如何批量刪除。然後找到了今天這篇帖子：https://zhuanlan.zhihu.com/p/2043616557302076562 但是，我順便照著他的方式做了修改。修改我貼在下面了。 (async () =&amp;gt; {...">
+<meta name="keywords" content="dmdcqbot,蝶梦渡川秋,Linux">
+<link rel="canonical" href="https://dmdcq.cn/post/0FV6dM/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"批量刪除B站關注，精簡急速版","url":"https://dmdcq.cn/post/0FV6dM/","description":"在知乎上看到一個困擾我許久的問題，我認爲學習視頻多的地方應該關注知識區UP主之類的，然而關注了1000個不關聯的人。這難免和我内心相悖，於是就找找有什麽地方可以教我一邊如何批量刪除。然後找到了今天這篇帖子：https://zhuanlan.zhihu.com/p/2043616557302076562 但是，我順便照著他的方式做了修改。修改我貼在下面了。 (async () =\u0026gt; {...","datePublished":"2026-07-09T21:14:41Z","dateModified":"2026-07-09T21:14:41Z","author":{"@type":"Person","name":"蝶夢渡川秋"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/images/avatar.png"},"name":"蝶夢渡川秋"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dmdcq.cn","name":"蝶夢渡川秋","position":1},{"@type":"ListItem","item":"https://dmdcq.cn/post/0FV6dM/","name":"批量刪除B站關注，精簡急速版","position":2}]}</script>
+</head>
+<body>
+
+  
+  <div class="reading-progress" id="reading-progress" style="display:none"></div>
+
+  
+  <header class="site-header">
+  <div class="container site-header-inner">
+    <a class="site-brand" href="/" rel="home">
+      
+        <h1 class="site-brand-text">蝶夢渡川秋</h1>
+      
+    </a>
+    
+      <p class="site-subtitle">羽渡秋水，夢渡虛空，人渡紅塵。</p>
+    
+
+    
+      <nav class="site-nav" aria-label="主导航">
+        
+          <a href="/">首頁</a>
+        
+          <a href="/post">博客</a>
+        
+          <a href="/memos">閃念</a>
+        
+          <a href="/links">友鏈</a>
+        
+          <a href="/post/about">關於</a>
+        
+      </nav>
+    
+  </div>
+
+  <div class="site-controls">
+    
+      <button class="ctrl" type="button" data-action="open-search" aria-label="搜索">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    
+    
+      <button class="ctrl" type="button" data-action="toggle-theme" aria-label="切换深浅模式">
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    
+  </div>
+</header>
+
+
+  
+  <main class="container" role="main">
+    
+  <article class="post-detail">
+    <header class="post-header">
+      <h1 class="post-title">批量刪除B站關注，精簡急速版</h1>
+      <div class="post-meta">
+        <span class="meta-item"><time datetime="2026-07-09">2026-07-09</time></span>
+        
+          <span class="meta-item">
+            
+              <a href="/category/default/">默認分類</a>
+            
+          </span>
+        
+        <span class="meta-item">3433 字</span>
+        <span class="meta-item">5 分钟阅读</span>
+        
+      </div>
+    </header>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>在知乎上看到一個困擾我許久的問題，我認爲學習視頻多的地方應該關注知識區UP主之類的，然而關注了1000個不關聯的人。這難免和我内心相悖，於是就找找有什麽地方可以教我一邊如何批量刪除。然後找到了今天這篇帖子：https://zhuanlan.zhihu.com/p/2043616557302076562<br />
+但是，我順便照著他的方式做了修改。修改我貼在下面了。</p>
+<pre><code>(async () =&gt; {
+  // 0.3秒速度配置
+  const config = {
+    clickDelay: 50,       // 瞬间滚动并点击
+    confirmDelay: 100,    // 压缩弹窗动画等待
+    perUserDelay: 150,    // 结束后只歇 150ms
+    pageDelay: 1200,      // 翻页加载留 1.2 秒
+    scrollBehavior: &quot;auto&quot;
+  };
+
+  // 移除了 CONFIRM_TEXT 打字确认环节，直接进入执行
+
+  window.__stopBiliUnfollow = false;
+  window.stopBiliUnfollow = () =&gt; {
+    window.__stopBiliUnfollow = true;
+    console.warn(&quot;已请求停止，当前操作结束后会停下。&quot;);
+  };
+
+  const sleep = (ms) =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));
+  const clean = (text) =&gt; (text || &quot;&quot;).replace(/\s+/g, &quot;&quot;).trim();
+
+  function visible(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.width &gt; 0 &amp;&amp; rect.height &gt; 0;
+  }
+
+  function getFollowButtons() {
+    return [...document.querySelectorAll(&quot;button, .follow-btn__trigger, [role='button']&quot;)]
+      .filter(visible)
+      .filter(el =&gt; [&quot;已关注&quot;, &quot;互相关注&quot;].includes(clean(el.textContent)))
+      .filter(el =&gt; !el.dataset.biliUnfollowTried);
+  }
+
+  function clickByText(texts) {
+    const btn = [...document.querySelectorAll(&quot;button, .be-dropdown-item, .vui_button, [role='button']&quot;)]
+      .filter(visible)
+      .find(el =&gt; texts.includes(clean(el.textContent)));
+
+    if (!btn) return false;
+    btn.click();
+    return true;
+  }
+
+  async function unfollowOne(btn) {
+    btn.dataset.biliUnfollowTried = &quot;1&quot;;
+    btn.scrollIntoView({ behavior: config.scrollBehavior, block: &quot;center&quot; });
+    await sleep(config.clickDelay);
+
+    btn.click();
+    await sleep(config.confirmDelay);
+
+    clickByText([&quot;取消关注&quot;]);
+    await sleep(config.confirmDelay);
+
+    clickByText([&quot;确定&quot;, &quot;确认&quot;]);
+    await sleep(config.perUserDelay);
+
+    return true;
+  }
+
+  let totalCount = 0;
+
+  async function processCurrentPage(pageNumber) {
+    let pageCount = 0;
+
+    while (!window.__stopBiliUnfollow) {
+      const buttons = getFollowButtons();
+      if (!buttons.length) break;
+
+      try {
+        await unfollowOne(buttons[0]);
+        pageCount++;
+        totalCount++;
+        console.log(`第 ${pageNumber} 页已处理 ${pageCount} 个，总计 ${totalCount} 个。输入 stopBiliUnfollow() 可停止。`);
+      } catch (error) {
+        console.error(&quot;处理单个关注失败，跳过继续：&quot;, error);
+        await sleep(1000);
+      }
+    }
+
+    return pageCount;
+  }
+
+  function goNextPage() {
+    const nextBtn = [...document.querySelectorAll(&quot;button, .vui_button, [role='button']&quot;)]
+      .filter(visible)
+      .find(el =&gt; {
+        const text = clean(el.textContent);
+        return text.includes(&quot;下一页&quot;)
+          &amp;&amp; !el.disabled
+          &amp;&amp; el.getAttribute(&quot;aria-disabled&quot;) !== &quot;true&quot;
+          &amp;&amp; !el.className.includes(&quot;disabled&quot;);
+      });
+
+    if (!nextBtn) return false;
+    nextBtn.click();
+    return true;
+  }
+
+  let pageNumber = 1;
+
+  console.log(&quot;已经绕过确认，开始光速批量取消关注... 输入 stopBiliUnfollow() 可随时停止。&quot;);
+
+  while (!window.__stopBiliUnfollow) {
+    console.log(`开始处理第 ${pageNumber} 页`);
+    await processCurrentPage(pageNumber);
+
+    await sleep(config.pageDelay);
+
+    if (!goNextPage()) {
+      console.log(&quot;没有找到可用的下一页按钮，任务结束。&quot;);
+      break;
+    }
+
+    pageNumber++;
+    await sleep(config.pageDelay);
+  }
+
+  console.log(`完成或已停止。共尝试处理 ${totalCount} 个关注。`);
+})();
+</code></pre>
+
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-footer-tags">
+          <span class="post-footer-tags-label">标签</span>
+          
+            <a href="/tag/b-zhan/">B站</a>
+          
+        </div>
+      
+
+      
+
+  <nav class="post-nav" aria-label="文章导航">
+    
+      <a class="post-nav-item prev" href="/post/sc-server/" rel="prev">
+        <span class="post-nav-label">« 上一篇</span>
+        <span class="post-nav-title">在NAS上搭建生存戰爭 - Linux端服務器保姆級教程</span>
+      </a>
+    
+    
+      <a class="post-nav-item next" href="/post/e470-chromeos/" rel="next">
+        <span class="post-nav-label">下一篇 »</span>
+        <span class="post-nav-title">給我的E470安裝Pop！OS</span>
+      </a>
+    
+  </nav>
+
+
+      
+<section class="post-comments">
+  <h3 class="post-comments-title">留下回声</h3>
+  <div id="gridea-comments" data-post-id="m9GGbT" data-post-title="批量刪除B站關注，精簡急速版" data-post-link="/post/0FV6dM/">
+    
+      
+    
+  </div>
+</section>
+
+    </footer>
+  </article>
+
+  </main>
+
+  
+  <footer class="site-footer">
+  <div class="container">
+    
+
+    
+      <p class="footer-slogan">相遇和離散，都有賞味期限。</p>
+    
+
+    <p>
+      © 2026 <a href="/">蝶夢渡川秋</a>
+      
+    </p>
+
+    
+
+    
+  </div>
+</footer>
+
+
+  
+  
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  
+
+  
+  
+<div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-input-label">
+  <div class="search-modal-panel" role="document">
+    <label for="search-modal-input" id="search-input-label" class="visually-hidden" style="position:absolute;left:-9999px">搜索</label>
+    <input class="search-modal-input" id="search-modal-input" type="search" placeholder="搜索文章 / 标签 / 内容…" autocomplete="off">
+    <p class="search-modal-tip">↑ ↓ 选择 · Enter 进入 · Esc 关闭 · / 唤起 · Cmd+K / Ctrl+K 唤起</p>
+    <div class="search-modal-results" id="search-modal-results"></div>
+    <div class="search-modal-empty" style="display:none"></div>
+  </div>
+</div>
+
+
+  
+  
+
+  
+  <script src="/scripts/main.js" defer></script>
+
+  
+  
+  
+
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: writecho v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
+</html>
